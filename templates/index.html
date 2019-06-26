@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>learning activities</title>
+</head>
+<body>
+    <h3 align="left">Что вам интересно узнать?</h3>
+    <div class="btn-group" style="text-align:left">
+        <button onclick="location.href='/classes';">Список всех классов</button>
+        <button onclick="location.href='/teachers';">Список всех учителей</button>
+    </div>
+    <br>
+    <div align="left">
+        <h3>Узнать какие классы и предметы ведет учитель</h3>
+        <p>Выберите учителя</p>
+    <form id="form" action="/byid" method="get">
+        <select name="teacher">
+            <option value="0">Выберите учителя</option>
+            {% for teacher in all_teachers %}
+            <option value="{{ teacher.idteacher }}">{{ teacher.fullname }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Узнать"/>
+        <br>
+    </form>
+    </div>
+    <br>
+</body>
+</html>
+
+
+
